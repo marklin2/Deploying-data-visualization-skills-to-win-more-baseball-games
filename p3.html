@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Play with Data</title>
+    <style>
+        #HEAD{
+            text-align:center;
+            font-size: 21px; 
+        }
+        /* Layout for navigators */
+        #NAV{
+            width:1360px;
+            margin: 0 auto;
+            overflow:hidden;
+        }
+        #NAV li{
+            float: left;
+        }
+        #NAV li a{
+            display: block;
+            width: 330px;
+            letter-spacing: 1px;
+            text-align: center;
+            color: #0900AA;
+            font-weight: bold;
+        }
+        .lef {
+             margin-left: 275px;
+             margin-right: 285px;
+             font-size: 19.5px;
+             line-height:33px;
+             color: #4C4F48;
+             font-family: sans-serif;
+             text-align: justify;    
+        }
+        .sub {
+            color: #0900AA;
+            font-size: 21px;
+            font-weight: bold;
+            font-family: sans-serif;
+        }
+        #end {
+            color: #BB0099;
+            font-size: 10px;
+        }
+        #instruct {
+            margin-left: 385px;
+            font-size: 21px;
+            color: #FDFCFC; /*light white*/
+            font-family: sans-serif;
+            text-align: justify;
+            background-color: #F70D1A;
+            width: 500px;
+            border: 15px red;
+            padding: 35px;
+        }
+        img {
+            display: block;
+            margin-left: 0px;
+            margin-right: auto;
+        }
+    </style>
+    <script>
+        function greeting() {
+        alert("Hope you enjoyed reading the tutorial\n\nClick OK to challenge yourself!");
+        }
+       
+
+        /* Make sure to use separate check answer functions or otherwise once you submit
+        one answer it will simulatenously generate all feedbacks */
+        
+        
+            
+        function checkAnswer1(){ 
+	
+		    var answer1 = document.getElementById("textboxanswer1").value;
+            if (answer1== "second") {
+                document.getElementById("feedback1").innerHTML = "You received 1/1 marks";
+            }else if (answer1== "Second") {
+                document.getElementById("feedback1").innerHTML = "You received 1/1 marks";
+            }else if (answer1.trim()=="") {
+                document.getElementById("feedback1").innerHTML = "Please try again";
+            }else{
+                document.getElementById("feedback1").innerHTML = "You received 0/1 marks";
+            }
+        }
+        
+        function checkAnswer2(){
+            
+            var answer2 = document.getElementById("textboxanswer2").value;
+            if (answer2== "sum") {
+                document.getElementById("feedback2").innerHTML = "You received 1/1 marks";
+            }else if (answer2== "Sum") {
+                document.getElementById("feedback2").innerHTML = "You received 1/1 marks";
+            }else if (answer2.trim()=="") {
+                document.getElementById("feedback2").innerHTML = "Please try again";
+            }else{
+                document.getElementById("feedback2").innerHTML = "You received 0/1 marks";
+            }       
+        }
+        
+        /*Answer is 5.10016, look for answers such as 5, 5.1, 5.1xxxxx*/
+        
+        function checkAnswer3(){ 
+	
+		    var answer3 = document.getElementById("textboxanswer3").value;
+            if (Math.floor(Number(answer3)*10) == 51) {
+                document.getElementById("feedback3").innerHTML = "You received 2/2 marks";
+            }else if (answer3.trim()=="") {
+                document.getElementById("feedback3").innerHTML = "Please try again";
+            }else{
+                document.getElementById("feedback3").innerHTML = "You received 0/2 marks";
+            }
+        }
+        
+        /*Code for question 4*/
+         var m = 0, n = 1, p = 0; /* Option A and C are the correct answers*/
+        function myFunction1(){
+           
+            var checkBox1 = document.getElementById("myCheck1");
+            
+            if (checkBox1.checked == true) {
+                m++;
+            }
+            
+        }
+        function myFunction2(){
+        
+            var checkBox2 = document.getElementById("myCheck2");
+            
+            if (checkBox2.checked == true) {
+                n = n-1;
+            }
+            
+        }
+        function myFunction3(){
+           
+
+            var checkBox3 = document.getElementById("myCheck3");
+            
+            if (checkBox3.checked == true) {
+                p++;
+            }
+            
+        }
+        function checkAnswer4(){
+         
+            if ((m + n + p) == 3) {
+                document.getElementById("feedback4").innerHTML = "You received 1/1 marks";
+            }else if ((m + n + p) == 2) {
+                document.getElementById("feedback4").innerHTML = "You received 0.67/1 marks";
+            }else if ((m + n + p) == 1) {
+                document.getElementById("feedback4").innerHTML = "You received 0.33/1 marks";
+            }else{
+                document.getElementById("feedback4").innerHTML = "You received 0/1 marks";
+            }
+        }
+        
+        function TotalScore() {        
+            
+            var a = 0, b = 0, c = 0, d = 0;
+            
+            if (document.getElementById("feedback1").innerHTML =="You received 1/1 marks"){
+                 a ++;
+            }
+            if (document.getElementById("feedback2").innerHTML =="You received 1/1 marks"){
+                 b ++;
+            }
+            if (document.getElementById("feedback3").innerHTML =="You received 2/2 marks"){
+                 c = c + 2;
+            }
+            
+            if (document.getElementById("feedback4").innerHTML =="You received 1/1 marks"){
+                 d ++;
+            }else if (document.getElementById("feedback4").innerHTML == "You received 0.67/1 marks") {
+                 d = d + 0.67;
+            }else if (document.getElementById("feedback4").innerHTML == "You received 0.33/1 marks") {
+                 d = d + 0.33;
+            }else{
+            }
+            
+        
+             var e = a + b + c + d;
+             var f = Math.floor((e/5) * 100);
+             document.getElementById("Score").innerHTML = "Your scored " + e + " out of 5, which is " + f + "% of the materials covered!";
+            
+            
+        }
+        
+    </script>
+</head>
+<body onload="greeting();">
+        
+        <h5>&middot;CS1102 Project (2020-2021 Semester A)
+        <br>&middot;Che-Hsuan LIN (54709434)</h5>
+        
+        <div id="HEAD">
+            <h2>Sports Analytics - Acquire Data Visualization Skills To Win More Baseball Games</h2>
+        </div>
+        <br> 
+        <div id="NAV">
+            <ul style="list-style-type:none;">
+                <li><a href="index.html">Visit Home Page</a></li>
+                <li><a href="p2.html">Input & Visualize Data</a></li>
+                <li><a href="p3.html" target="_blank">Play with Data</a></li>
+                <li><a href="p4.html">Appendix: CS1102</a></li>
+            </ul>
+        </div>
+        <br/> <br/>
+        <hr/>
+        <br/> <br/><br/> <br/>
+        
+        <h4 id="instruct">Read Carefully Before You Start! <br/><br/>
+        There are 4 questions in total, you may submit your answer after attempting 
+        each of them. Please note that the questions are based on the content in the 
+        previous webpage, feel free to revisit and reload this page.</h4>
+        <br/>
+        
+    <div class="lef">   
+        <br/> <br/> <br/> 
+        
+        <p class="sub">(1 point) Question 1</p>
+        <p>Starting from the left, which argument should we specify our target range/table in the
+        VLOOKUP function in excel? (Answer first, second, third...) </p> 
+        <p>
+        <input type="text" id="textboxanswer1" size="8" maxlength="7"> <button id="checkButton" onclick="checkAnswer1();">Submit your answer</button>
+        </p>
+        <span id="feedback1"></span>	         
+        <br/><br/>      
+        
+        <p class="sub">(1 point) Question 2</p>
+        <p>In Tableau, what is the default measurement of values after you drag them to the column or
+        <br/>row space?</p>
+        <p>
+        <input type="text" id="textboxanswer2" size="8" maxlength="7"> <button id="checkButton" onclick="checkAnswer2();">Submit your answer</button>
+        </p>
+        <span id="feedback2"></span>	
+        <br/><br/>
+        
+        <p class="sub">(2 points) Question 3</p>
+        <p>Players in different positions tend to receive distictive payrolls, below is a graph containing the
+        information on player's average salary and WAR in all positions. Calculate a starting pitcher's
+        (SP) predictive WAR value if he signed a 20 Million contract before the 2019 season.
+        (Formula: Average WAR = 0.25056 * Salary (Million) + 0.08896)</p>
+        <p>
+        <input type="text" id="textboxanswer3" size="8" maxlength="7"> <button id="checkButton" onclick="checkAnswer3();">Submit your answer</button>
+        </p>
+        <span id="feedback3"></span>	
+        <br/><br/>
+        <img src="Pics/21.png">
+        <br/><br/>
+        
+        <p class="sub">(1 point) Question 4</p>
+        <p>Assume that three superstars that have proven their abilities in MLB, including slugger
+        J.D. Martinez, three times world champion Buster Posey and baseball scientist Trevor Bauer
+        have their contracts expired after the 2019 season, and are now working on renewing their
+        contracts. According to the graph, who is likely to sign a Big Fat Contract? (There may be
+        more than one answer) (We neglect age, position, popularity and all other factors)</p>
+        <br/>
+        <input type="checkbox" id="myCheck1" onclick="myFunction1();">
+        <label for="myCheck1">(A): J.D. Martinez</label> 
+        <br/>
+        <input type="checkbox" id="myCheck2" onclick="myFunction2();">
+        <label for="myCheck2">(B): Buster Posey</label> 
+        <br/>
+        <input type="checkbox" id="myCheck3" onclick="myFunction3();">
+        <label for="myCheck3">(C): Trevor Bauer</label> 
+        <br/>
+        
+        <p>
+        <button id="checkButton" onclick="checkAnswer4();">Submit your answer</button>
+        </p>
+        <span id="feedback4"></span>
+        <br/>
+        <img src="Pics/22.png">
+        <br/><br/><br/>
+        
+        <hr/>
+        <p class="sub">Ready to check your overall performance?</p>
+        <p><button id="checkButton" onclick="TotalScore();">Check your Total Score</button>
+        </p>
+        <span id="Score"></span>
+        <br/><br/><br/><br/>
+
+        <p id="end">Copyright: Images Illustrated & Screencaptured By Che-Hsuan Lin</p>
+    </div>   
+</body>
+</html>

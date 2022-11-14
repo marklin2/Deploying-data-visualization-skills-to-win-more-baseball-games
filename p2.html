@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Input & Visualize Data</title>
+      <style>
+        #HEAD{
+            text-align:center;
+            font-size: 21px; 
+        }
+        /* Layout for navigators */
+        #NAV{
+            width:1360px;
+            margin: 0 auto;
+            overflow:hidden;
+        }
+        #NAV li{
+            float: left;
+        }
+        #NAV li a{
+            display: block;
+            width: 330px;
+            letter-spacing: 1px;
+            text-align: center;
+            color: #0900AA;
+            font-weight: bold;
+        }
+        .lef {
+             margin-left: 275px;
+             margin-right: 280px;
+             font-size: 19.5px;
+             line-height:33px;
+             color: #4C4F48;
+             font-family: sans-serif;
+             text-align: justify;    
+        }
+        .sub {
+            color: #0900AA;
+            font-size: 21px;
+            font-weight: bold;
+        }
+        span {
+            font-style: italic;
+        }
+        .downloadlinks {
+            display:inline-block;
+            background-color: #88A95B;
+            font-family:  Helvetica, "Times New Roman", Courier;
+            font-size: 21px;
+            letter-spacing: 0.8px;
+            margin-left: 100px;
+            font-weight: bold;
+            width: 280px;
+            height: 30px;
+            text-align: center;
+        }
+        .downloadlinks a{
+            color:#FFFFFC;
+        }
+        #end {
+            color: #BB0099;
+            font-size: 10px;
+        }
+        #summary {
+            color: #708090;
+            margin-left: 90px;
+        }
+        img {
+            display: block;
+            margin-left: 0px;
+            margin-right: auto;
+        }
+     </style>
+  </head>
+  <body>
+    
+      <h5>&middot;CS1102 Project (2020-2021 Semester A)
+      <br/>&middot;Che-Hsuan LIN (54709434)</h5>
+      <div id="HEAD">
+            <h2>Sports Analytics - Acquire Data Visualization Skills To Win More Baseball Games</h2>
+      </div>
+        <br/> 
+        <div id="NAV">
+            <ul style="list-style-type:none;">
+                <li><a href="index.html">Visit Home Page</a></li>
+                <li><a href="p2.html">Input & Visualize Data</a></li>
+                <li><a href="p3.html" target="_blank">Play with Data</a></li> 
+                <li><a href="p4.html">Appendix: CS1102</a></li>
+            </ul>
+        </div>
+        <br/> <br/>
+        <img src="Pics/1.jpg">
+        
+        <h4 id="summary">"Data Visualization has gradually become a critical technique in analytics, and in Baseball!<br/>
+                It not only enables users to overview, to direct and to explore the hidden patterns
+                of large volume of datasets, but also elevates your visions to a new era"</h4>
+        </br>
+        <hr>
+    <div class="lef">    
+        <br/> <br/>      
+       <p class="sub">Select key datasets</p>
+       <p>To ensure that the content does not seem tedious, we will neither go through the mechanics
+       of pitching <span>(believe me, they will look banal if you are not a baseball fan!)</span> nor the advanced
+       statistics of hitting <span>(you may also not enjoy it if you hate statistics!)</span>. Thus, we will talk about 
+       player's salary and contribution! In terms of contribution, Wins Above Replacement (WAR) is 
+       currently the best measurement in baseball. For example, if player A has a +2.7 WAR, having 
+       player A on your team for an entire season will likely give you 2.7 more wins than without him,
+       vice versa for negative values. At the end of the day, dollars and performance are the critical
+       elements.</p>
+       
+       <p><a href="https://library.fangraphs.com/misc/war/" target="_blank"><div class="downloadlinks">Read About WAR</div></a></p>
+       <br/><p>Now, click the button below to access Fangraphs and obtain Major League Baseball (MLB) 
+       player's WAR and USA Today to collect player's salary! <span>(Note that we will use the datasets in
+       2019, the odds in the shorten 2020 season may affect the accuracy of our analysis!)</span></p>
+       
+       <p><a href="https://www.fangraphs.com/warleaders.aspx?season=2019&team=all&type=" target="_blank"><div class="downloadlinks">Visit Fangraphs</div></a></p>
+       <p><a href="https://www.usatoday.com/sports/mlb/salaries/" target="_blank"><div class="downloadlinks">USA Today</div></a></p>
+       <br/><br/><br/><br/>
+       
+       <p class="sub">Obtain key datasets</p>
+       <p>After clicking Fangraphs, you will see a leaderboard of an inclusion of players that appeared
+       in MLB in the 2019 season. For starters, make sure to change the page size from 30 to 50 to
+       include a complete list of players. Further, click on the <span>Export Data</span> button to save the datasets
+       to your local device.</p>
+       <br/>
+       <img src="Pics/3.png">
+       <br/><br/><br/>
+       <p>You will see the following data spreadsheet after opening the file exported from Fangraphs. 
+       Now, make sure to convert the file from csv to xlsx to avoid issues in later steps and rename
+       it as <span>Fangraphs Leaderboard.</span> </p>
+       <br/>
+       <img src="Pics/5.png">
+       <br/><br/>
+       <br/><p>On the other hand, for the player salaries, we copy the table <span>(start from the red circle)</span> from
+       USA News and paste it to the same sheet on the excel file <span>Fangraphs Leaderboard</span>.</p>
+       <br/>
+       <img src="Pics/4.png">
+       <br/>
+       <br/><p>Now, you will see a messy and organized table on your excel spreadsheet, we will clean and
+       select the datasets that we are analyzing in further steps. <span>(Short tip: For the sake of your
+       eyes, you may want to convert all the fonts into an identical setting.)</span></p>
+       <br/>
+       <img src="Pics/6.png">
+       <br/><br/>
+       <p class="sub">Clean your datasets (Employ Excel Tricks)</p>
+       <p>We first delete the outstanding columns that will not be used in this tutorial by only keeping
+       Names <span>(from both sources)</span>, Total WAR, Position and Salary.</p>
+       <br/>
+       <img src="Pics/7.png">
+       <br/><br/>
+       <br><p> Afterwards, we will match player names <span>(Columns A & D)</span> using a popular excel built in function:
+       VLOOKUP. The first argument corresponds to the value of the cell that we intend to search for,
+       the second is our target range <span>(Columns A & B)</span>, the third is the number of the column we wish
+       to obtain. We enter the formula in G2 according to the image below. </p>
+       <br/>
+        <img src="Pics/8.png">
+        </br></br>
+       <br><p>After entering the values on the function, you will find out that the WAR for Max Scherzer is
+       <br>6.6 <span>(which is a pretty decent number)</span>. We drag down cell G2 to obtain values for the entire
+       <br>column, then copy columns D & G. <span>(We will address the #N/A issue later.)</span></p>
+       <br>
+       <img src="Pics/9.png">
+       <br><br>
+       <br><p>Furthermore, we paste the columns to a new sheet <span>(named as cleaned data)</span> to keep things
+       <br/>tidy. Please note that it is important to right click and select <span>paste special</span> by only pasting
+       <br/>the value rather than the traditional crtl + V. <span>(exclude the functions from the original columns) </span>
+       <br>Now, click column D2 and select the entire table, which we intend to sort each row in a
+       <br>descending order. <span>(the value of WAR is from large to small)</span> </p>
+       <br>
+       <img src="Pics/10.png">
+       <br><br>
+       <br><p>Unfortunately, you will see dozens of #N/As in the WAR column. Do not panic, everything is
+       <br/>alright. Those are the players that received salary but did not appear in any major league
+       <br/>games. They were either injured and sidelined for the season or demoted to the farm systems. </p>
+       <br>
+       <img src="Pics/11.png">
+       <br></br>
+       <br><p>To clean up the data, delete the player rows manually that is showing #N/A on the Total WAR
+       <br> column. <span>(An alternative method is to use VBA to delete the rows, to make my life easier, I will
+       <br>leave that up to readers that are interested in it.)</span></p>
+        
+       <br/>
+       <img src="Pics/12.png">
+       <br/><p>So far so good? Let us jump to the next section!</p>
+       <br/><br/><br/><br/>
+       
+       
+       <p class="sub">Visualize your Data</p>
+       <p>We start by installing Tableau.<br>
+       Tableau provides a public and free platform for users to share their fabulous pieces. Click the 
+       button below to visit the website and remember to register for an account if you do not have
+       one. </p>
+       
+       <p><a href="https://public.tableau.com/en-us/s/download" target="_blank"><div class="downloadlinks">Download Tableau</div></a></p>
+
+       <br/><p>After following the steps to install <span>Tableau Public</span>, double click the icon and you will see this 
+       aesthetic interface. Further, import the excel file you saved early with the cleaned datasets.</p>
+       <br/>
+       <img src="Pics/13.png">
+       <br/><br/>
+       <br><p>Then Drag the sheet <span>cleaned data</span> to the right.</p> 
+       <br/>
+       <img src="Pics/14.png">
+       <br/><br/>
+       <br><p>Access the worksheet by clicking <span>Go to Worksheet</span> below.</p>
+       <br>
+       <img src="Pics/15.png">
+       <br/><br/>
+       <br/><p>Now, you will see an environment that allows you to orchestra all sorts of visualization tricks.
+       We start from going back and contemplate our concept about salary and contribution. On a
+       statistical stand point, we intend to predict the contribution from each player on how much
+       he was paid. In other words, if you are the general manager of the team, you would expect your
+       guys worth every penny given. To do so, we will insert  Salary (independent variable) as the 
+       column set and WAR (dependent value) as the row set. Unfortunately, you only see one point
+       on the table, which is the sum of the values.</p>     
+       <br/>
+       <img src="Pics/16.png">
+       <br/><br/>
+       <br><p>We try to plot the datasets for each player to the graph. We will now insert player names as
+       the dimension by dragging them from the left and drop them on <span>color</span>. You will see a colorful
+       graph with all players on the right.</p>
+       <br/>
+       <img src="Pics/17.png">
+       <br/><br/>
+       <br/><p>After plotting our datasets, we first try to figure out that whether we can predict 
+       contribution by looking at salary. We click <span>Analytics</span> on the left and drag <span>Trend Line</span>
+       then drop it on the graph. A linear regression formula and the R Squared Value will be 
+       presented. Given that the R Squared value is insignificant and is useless for predicting
+       contribution, we implement another analytical method - clustering.</p>
+       
+       <br/>
+       <img src="Pics/18.png">
+       <br/></br/>
+       <br/><p>We first remove the trend line, and drag <span>Cluster</span> then drop it on the icon <span>Cluster</span> emerged on 
+       the graph. We choose to cluster the datasets into 4 groups, done! Although the calculation
+       behind this artistic graph extremely problematic, by using Tableau, it is trivial to obtain the
+       clustered data. underpaid overpaid issues, We overlook the complex salary system in MLB.</p>
+       
+       <p><a href="https://help.tableau.com/current/pro/desktop/en-gb/clustering.htm" target="_blank"><div class="downloadlinks">Read About Clustering</div></a></p>
+       <p>It is invaluable to learn that which cluster is a player fitting in. Logically, the blue ones that
+       are sitting around the origin are the ones with lower salaries, and we do not expect them to
+       play like a star. In contrast, the yellow ones that receive luxurious payrolls did their job in 2019.
+       The intriguing clusters to focus on are the reds and greens, with the former performing much
+       better than their peers and the later overpaid.</p>
+       
+       <br/>
+       <img src="Pics/19.png">
+       <br/><br/>
+       <br/><p>Below is a table with the descriptions on the clustered datasets.</p>
+       <br/>
+       <img src="Pics/20.png">
+       <br/><br/>
+       
+       <p class="sub">Further Studies</p>
+       <p>For further applications, we want to refit datasets that are not included. For example, we
+       can extract data from a historical season and compare the range of clusters. Furthermore,
+       we can flip the x y axis, which means using WAR to predict the salary. It may be useful
+       for negotiating for future salaries on the next contract.</p>
+       <br/>
+       <p class="sub">Ready for some challenge? Scroll up to visit the "Play with Data" webpage to show off
+       your intelligence.</p>
+       <br/><br/><br/><br/><br/>
+      
+    
+     <p id="end">Copyright: Images Illustrated & Screencaptured By Che-Hsuan Lin</p>
+    </div>
+  </body>
+</html>
+
